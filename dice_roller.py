@@ -66,6 +66,7 @@ def main():
             # return the result
             byte_dice_roll = dice_roll.to_bytes(4, byteorder='big') # byte string is 4 bytes, in big-endian
             socket.send(byte_dice_roll)
+            print(f"Response sent: {byte_dice_roll}")
         else:
             print("Dice rolling Microservice has ended.")
             socket.send_string("") # send back empty string
